@@ -13,7 +13,7 @@ class CSVFileHandler:
         print('********* LISTA STUDENTOW *********')
         print('***********************************\n')
 
-        with open('students_list.csv', 'r+') as csv_file:
+        with open('students_list.csv', 'r') as csv_file:
    
             print('-----------------------------------')
 
@@ -51,7 +51,7 @@ class CSVFileHandler:
 
         last_id = 0
 
-        with open('students_list.csv', 'r+') as csv_file:
+        with open('students_list.csv', 'r') as csv_file:
 
             csv_reader = csv.reader(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
@@ -99,7 +99,7 @@ class CSVFileHandler:
             _input = input()
 
             if _input == 'y':
-                with open('students_list.csv', 'a+') as csv_file:
+                with open('students_list.csv', 'a') as csv_file:
                     csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
                     csv_writer.writerow([_id, parameters['Imie'], parameters['Nazwisko'], parameters['Data urodzenia'], \
                                          parameters['Nr indeksu'], parameters['Kierunek'], parameters['Rok']])
@@ -115,7 +115,7 @@ class CSVFileHandler:
         id_map = dict()
         data = list() 
 
-        with open('students_list.csv', 'r+') as csv_file:
+        with open('students_list.csv', 'r') as csv_file:
 
             csv_reader = csv.reader(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
@@ -145,7 +145,7 @@ class CSVFileHandler:
                         del(data[i])
                         break
 
-                with open('students_list.csv', 'w+') as csv_file:
+                with open('students_list.csv', 'w') as csv_file:
 
                     csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
                     csv_writer.writerows(data)
@@ -188,7 +188,7 @@ class CSVFileHandler:
                         break
                 
                 elif choice == '3':
-                    print('Dziekujemy za skorzystanie z programu!')
+                    print('\nDziekujemy za skorzystanie z programu!\n')
                     sys.exit()
                     break
                 

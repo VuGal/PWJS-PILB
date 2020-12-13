@@ -10,7 +10,7 @@ with open('sample_text_file.txt', 'r') as file:
 
 new_words = [word for word in words if word.lower() not in unwanted_words]
 
-with open('sample_text_file_new.txt', 'w') as file:
+with open('sample_text_file_new.txt', 'w+') as file:
     file.writelines(new_words)
     file.close()
 

@@ -225,7 +225,7 @@ class XMLDOMParser:
         self.print_employee_info(collection)
         print("\n********************************\n")
 
-        with open('sample_xml_file.xml', 'w+') as f:
+        with open('sample_xml_file.xml', 'w') as f:
             DOMTree.writexml(f)
 
 

@@ -10,7 +10,7 @@ with open('sample_text_file.txt', 'r') as file:
 
 words[:] = [words_replacement_dict[word] if word in words_replacement_dict else word for word in words]
 
-with open('sample_text_file_new.txt', 'w') as file:
+with open('sample_text_file_new.txt', 'w+') as file:
     file.writelines(words)
     file.close()
 

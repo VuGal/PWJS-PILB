@@ -13,7 +13,7 @@ class JSONFileHandler:
         print('** LISTA STUDENTOW I PRACOWNIKOW **')
         print('***********************************\n')
 
-        with open('students_and_employees_list.json', 'r+') as json_file:
+        with open('students_and_employees_list.json', 'r') as json_file:
    
             data = json.load(json_file)
 
@@ -73,7 +73,7 @@ class JSONFileHandler:
 
         last_id = 0
 
-        with open('students_and_employees_list.json', 'r+') as json_file:
+        with open('students_and_employees_list.json', 'r') as json_file:
 
             data = json.load(json_file)
 
@@ -123,7 +123,7 @@ class JSONFileHandler:
             _input = input()
 
             if _input == 'y':
-                with open('students_and_employees_list.json', 'w+') as json_file:
+                with open('students_and_employees_list.json', 'w') as json_file:
                     new_student = {
                         'id' : _id,
                         'name' : parameters['Imie'],
@@ -150,7 +150,7 @@ class JSONFileHandler:
 
         last_id = 0
 
-        with open('students_and_employees_list.json', 'r+') as json_file:
+        with open('students_and_employees_list.json', 'r') as json_file:
 
             data = json.load(json_file)
 
@@ -202,7 +202,7 @@ class JSONFileHandler:
             _input = input()
 
             if _input == 'y':                
-                with open('students_and_employees_list.json', 'w+') as json_file:
+                with open('students_and_employees_list.json', 'w') as json_file:
                     new_employee = {
                         'id' : _id,
                         'name' : parameters['Imie'],
@@ -226,7 +226,7 @@ class JSONFileHandler:
 
         id_map = dict()
 
-        with open('students_and_employees_list.json', 'r+') as json_file:
+        with open('students_and_employees_list.json', 'r') as json_file:
 
             data = json.load(json_file)
             students = data['students']
@@ -253,7 +253,7 @@ class JSONFileHandler:
                         del(students[index])
                         break
 
-                with open('students_and_employees_list.json', 'w+') as json_file:
+                with open('students_and_employees_list.json', 'w') as json_file:
                     json.dump(data, json_file, indent=4)
                 break
 
@@ -265,7 +265,7 @@ class JSONFileHandler:
 
         id_map = dict()
 
-        with open('students_and_employees_list.json', 'r+') as json_file:
+        with open('students_and_employees_list.json', 'r') as json_file:
 
             data = json.load(json_file)
             employees = data['employees']
@@ -292,7 +292,7 @@ class JSONFileHandler:
                         del(employees[index])
                         break
 
-                with open('students_and_employees_list.json', 'w+') as json_file:
+                with open('students_and_employees_list.json', 'w') as json_file:
                     json.dump(data, json_file, indent=4)
                 break
 
@@ -346,7 +346,7 @@ class JSONFileHandler:
                         break
                 
                 elif choice == '5':
-                    print('Dziekujemy za skorzystanie z programu!')
+                    print('\nDziekujemy za skorzystanie z programu!\n')
                     sys.exit()
                     break
                 
