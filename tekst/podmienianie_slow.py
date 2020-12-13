@@ -2,6 +2,7 @@
 
 import re
 
+
 words_replacement_dict = { 'i ' : 'oraz ', ' i' : ' oraz', 'oraz ' : 'i ', ' oraz' : ' i', 'nigdy ' : 'prawie nigdy ', ' nigdy' : ' prawie nigdy', 'dlaczego ' : 'czemu ', ' dlaczego' : ' czemu' }
 
 with open('sample_text_file.txt', 'r') as file:

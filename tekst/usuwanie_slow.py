@@ -2,6 +2,7 @@
 
 import re
 
+
 unwanted_words = ['się ', ' się', 'i ', ' i', 'oraz ', ' oraz', 'nigdy ', ' nigdy', 'dlaczego ', ' dlaczego']
 
 with open('sample_text_file.txt', 'r') as file:

@@ -3,6 +3,7 @@
 from PIL import Image
 import glob
 
+
 print("\nRozpoczeto konwersje plikow .jpg znajdujacych sie w biezacym katalogu (bez podkatalogow) na pliki .png ...\n") 
 
 filenames = sorted(glob.glob('*.jpg'))

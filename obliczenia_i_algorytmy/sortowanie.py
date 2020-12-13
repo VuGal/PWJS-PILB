@@ -4,6 +4,7 @@
 
 import random
 
+
 nums = [random.random() for _ in range(50)]
 
 print("\nTablica przed sortowaniem:\n")

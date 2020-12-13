@@ -11,6 +11,7 @@ class Histogram():
 
         self.results = np.zeros((10,), dtype=int)
 
+
     def parallel_sum(self, row):
 
         _sum = np.sum(row)
@@ -19,6 +20,7 @@ class Histogram():
             if _sum <= (i+1)*10:
                 self.results[i] += 1
                 break
+
 
     def print_results(self):
 
@@ -30,10 +32,11 @@ class Histogram():
             results_range = f'{10*i+1}-{10*i+10}'
             print(f'{results_range} punktow: {result} osob')
 
+
     def run(self):
 
         np.random.RandomState(100)
-        arr = np.random.randint(0, 10, size = [100000, 10])
+        arr = np.random.randint(0, 10, size = [50000, 10])
         data = arr.tolist()
 
         print('\nW internetowym tescie ze znajomosci jezyka Python wzielo udzial 50000 uzytkownikow.')
@@ -49,10 +52,12 @@ class Histogram():
 
 
 def main():
+
     hist = Histogram()
     hist.run()
 
 
 if __name__ == '__main__':
+    
     main()
 

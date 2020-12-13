@@ -5,13 +5,13 @@ import json
 
 
 class JSONFileHandler:
-    
+
+
     def show_start_screen(self):
         
         print('\n***********************************')
         print('** LISTA STUDENTOW I PRACOWNIKOW **')
         print('***********************************\n')
-
 
         with open('students_and_employees_list.json', 'r+') as json_file:
    
@@ -64,6 +64,7 @@ class JSONFileHandler:
             print('4. Usun pracownika')
             print('5. Zakoncz program\n')
 
+
     def add_student(self):
 
         print('\n----------------------------------')
@@ -85,7 +86,7 @@ class JSONFileHandler:
 
         _id = last_id + 1
 
-        parameters = { \
+        parameters = {
                 'Imie' : '',
                 'Nazwisko' : '',
                 'Data urodzenia' : '',
@@ -162,7 +163,7 @@ class JSONFileHandler:
 
         _id = last_id + 1
 
-        parameters = { \
+        parameters = { 
                 'Imie' : '',
                 'Nazwisko' : '',
                 'Data urodzenia' : '',
@@ -250,6 +251,7 @@ class JSONFileHandler:
                 for index, _id in id_map.items():
                     if _id == _input:
                         del(students[index])
+                        break
 
                 with open('students_and_employees_list.json', 'w+') as json_file:
                     json.dump(data, json_file, indent=4)
@@ -288,6 +290,7 @@ class JSONFileHandler:
                 for index, _id in id_map.items():
                     if _id == _input:
                         del(employees[index])
+                        break
 
                 with open('students_and_employees_list.json', 'w+') as json_file:
                     json.dump(data, json_file, indent=4)
@@ -295,6 +298,7 @@ class JSONFileHandler:
 
             else:
                 print('Podano nieprawidlowe ID pracownika! Prosze sprobowac ponownie.') 
+
 
     def run(self):
 
@@ -349,9 +353,14 @@ class JSONFileHandler:
                 else:
                     raise
 
+
 def main():
+
     json_file_handler = JSONFileHandler()
     json_file_handler.run()
 
+
 if (__name__ == '__main__'):
+    
     main()
+

@@ -5,13 +5,13 @@ import csv
 
 
 class CSVFileHandler:
-    
+
+
     def show_start_screen(self):
         
         print('\n***********************************')
         print('********* LISTA STUDENTOW *********')
         print('***********************************\n')
-
 
         with open('students_list.csv', 'r+') as csv_file:
    
@@ -20,15 +20,21 @@ class CSVFileHandler:
             csv_reader = csv.reader(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     
             for row in csv_reader:
-       
-                print(f'ID: {row[0]}')
-                print(f'Imie: {row[1]}')
-                print(f'Nazwisko: {row[2]}')
-                print(f'Data urodzenia: {row[3]}')
-                print(f'Nr indeksu: {row[4]}')
-                print(f'Kierunek: {row[5]}')
-                print(f'Rok: {row[6]}')
-                print('-----------------------------------')
+
+                try:
+                    
+                    print(f'ID: {row[0]}')
+                    print(f'Imie: {row[1]}')
+                    print(f'Nazwisko: {row[2]}')
+                    print(f'Data urodzenia: {row[3]}')
+                    print(f'Nr indeksu: {row[4]}')
+                    print(f'Kierunek: {row[5]}')
+                    print(f'Rok: {row[6]}')
+                    print('-----------------------------------')
+
+                except:
+
+                    print(f'Plik .csv zawiera bledy!')
 
             print('\n***********************************\n')
             print('Wybierz akcje:')
@@ -51,8 +57,8 @@ class CSVFileHandler:
 
             for row in csv_reader:
                 
-                if row[0] > last_id:
-                    last_id = row[0]
+                if int(row[0]) > last_id:
+                    last_id = int(row[0])
         
         _id = last_id + 1
 
@@ -120,7 +126,7 @@ class CSVFileHandler:
                 return
         
             csv_file.seek(0)
-            
+
             for i, row in zip(range(number_of_students), csv_reader):
                 data.append(row)
                 id_map[i] = row[0]
@@ -131,11 +137,13 @@ class CSVFileHandler:
 
             _input = input()
 
-            if ( int(_input) > 0 and _input in id_map.values() ):
-            
+            if ( _input > '0' and _input in id_map.values() ):
+
                 for i in range(len(data)):
-                    if row[i][0] == _input:
+
+                    if data[i][0] == _input:
                         del(data[i])
+                        break
 
                 with open('students_list.csv', 'w+') as csv_file:
 
@@ -189,9 +197,12 @@ class CSVFileHandler:
 
 
 def main():
+
     csv_file_handler = CSVFileHandler()
     csv_file_handler.run()
 
+
 if (__name__ == '__main__'):
+
     main()
 

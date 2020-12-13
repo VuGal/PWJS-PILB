@@ -15,9 +15,11 @@ class Philosopher(threading.Thread):
         self.right_fork = rfork
         self.stop_event = event
 
+
     def think(self):
 
         print(f'{self.name} mysli.')
+
 
     def dine(self):
 
@@ -28,6 +30,7 @@ class Philosopher(threading.Thread):
         print(f'{self.name} zakonczyl posilek.')
         self.left_fork.release()
         self.right_fork.release()
+
 
     def run(self):
 
@@ -40,7 +43,7 @@ def main():
 
         forks = [threading.Lock() for i in range(5)]
         event = threading.Event()
-        philosophers = [Philosopher('Filozof nr %i' % i, forks[i%5], forks[(i+1)%5], event) for i in range(5)]
+        philosophers = [Philosopher('Filozof nr %i' % (i+1), forks[i%5], forks[(i+1)%5], event) for i in range(5)]
 
         for p in philosophers:
             p.start()
@@ -60,5 +63,6 @@ def main():
 
 
 if __name__ == '__main__':
+
     main()
 

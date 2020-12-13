@@ -6,14 +6,17 @@ import time
 
 class Semaphore():
 
+
     def __init__(self, init_value):
         self.lock = threading.Condition(threading.Lock())
         self.value = init_value
+
 
     def up(self):
         with self.lock:
             self.value += 1
             self.lock.notify()
+
 
     def down(self):
         with self.lock:
@@ -24,12 +27,14 @@ class Semaphore():
 
 class Fork():
 
+
     def __init__(self, num):
         
         self.number = num
         self.user_name = ''
         self.lock = threading.Condition(threading.Lock())
         self.taken = False
+
 
     def take(self, user_name):
         
@@ -38,8 +43,9 @@ class Fork():
                 self.lock.wait()
             self.user_name = user_name
             self.taken = True
-            print(f'{user_name} podniosl widelec nr {self.number}.')
+            print(f'{user_name} podniosl widelec nr {self.number+1}.')
             self.lock.notifyAll()
+
 
     def drop(self, user_name):
         
@@ -48,11 +54,12 @@ class Fork():
                 self.lock.wait()
             self.user_name = -1
             self.taken = False
-            print(f'{user_name} opuscil widelec nr {self.number}.')
+            print(f'{user_name} opuscil widelec nr {self.number+1}.')
             self.lock.notifyAll()
 
 
 class Philosopher(threading.Thread):
+
 
     def __init__(self, name, lfork, rfork, butler):
 
@@ -61,6 +68,7 @@ class Philosopher(threading.Thread):
         self.left_fork = lfork
         self.right_fork = rfork
         self.butler = butler
+
 
     def run(self):
 
@@ -93,7 +101,7 @@ def main():
 
         f = [Fork(i) for i in range(5)]
 
-        p = [Philosopher(f'Filozof nr {i}', f[i], f[(i+1)%5], butler) for i in range(5)]
+        p = [Philosopher(f'Filozof nr {i+1}', f[i], f[(i+1)%5], butler) for i in range(5)]
 
         for i in range(5):
             p[i].start()
@@ -102,5 +110,6 @@ def main():
 
 
 if __name__ == '__main__':
+
     main()
 

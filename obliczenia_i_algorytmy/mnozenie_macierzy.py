@@ -2,6 +2,7 @@
 
 import numpy as np
 
+
 a = np.random.randint(1000, size=(8, 8))
 b = np.random.randint(1000, size=(8, 8))
 

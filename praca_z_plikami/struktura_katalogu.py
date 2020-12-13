@@ -2,6 +2,7 @@
 
 import os
 
+
 print("\nStruktura plikow rozpoczynajaca sie od obecnego katalogu roboczego:\n") 
 
 for root, dirs, files in os.walk(r'.'):

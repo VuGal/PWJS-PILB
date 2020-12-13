@@ -1,20 +1,23 @@
 #!/usr/bin/env python3
 
 import numpy as np
-import multiprocessing as mproc    # uzyto biblioteki "multiprocessing" zgodnie z zaleceniem prowadzacego
+import multiprocessing as mproc
 
 
 class Histogram:
+
 
     def __init__(self):
 
         self.results = np.zeros((10,), dtype=int)
 
+
     def parallel_sum(self, row):
 
         _sum = np.sum(row)
         return _sum
-        
+
+
     def print_results(self):
 
         print('Wyniki testu (laczna suma punktow):\n')
@@ -25,10 +28,11 @@ class Histogram:
             results_range = f'{10*i+1}-{10*i+10}'
             print(f'{results_range} punktow: {result} osob')
 
+
     def run(self):
 
         np.random.RandomState(100)
-        arr = np.random.randint(0, 10, size = [100000, 10])
+        arr = np.random.randint(0, 10, size = [50000, 10])
         data = arr.tolist()
 
         pool = mproc.Pool(mproc.cpu_count())
@@ -51,10 +55,12 @@ class Histogram:
 
 
 def main():
+
     hist = Histogram()
     hist.run()
 
 
 if __name__ == '__main__':
+    
     main()
 

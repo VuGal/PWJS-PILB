@@ -1,0 +1,36 @@
+{
+	"students":
+	[
+		{
+			"id": 1,
+			"name": "Jozef",
+			"surname": "Wisniewski",
+			"date_of_birth": "04.07.1999",
+			"student_no": "345678",
+			"field_of_study": "Elektronika",
+			"year_of_study": "III"
+		},
+		{
+                        "id": 2,
+                        "name": "Katarzyna",
+                        "surname": "Kowalska",
+                        "date_of_birth": "06.03.1998",
+                        "student_no": "123456",
+                        "field_of_study": "Elektronika i Telekomunikacja",
+                        "year_of_study": "IV"
+                }
+	],
+	"employees":
+	[
+		{
+			"id": 3,
+                        "name": "Jan",
+                        "surname": "Kowalski",
+                        "date_of_birth": "01.01.1990",
+			"position": "Asystent",
+			"room": "C-2, IV p., pok.789",
+			"phone_number": "+48 123 456 789",
+			"email_address": "kowalski@agh.edu.pl"
+		}
+	]
+}

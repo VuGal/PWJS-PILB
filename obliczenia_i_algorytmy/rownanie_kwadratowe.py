@@ -2,6 +2,7 @@
 
 import numpy as np
 
+
 coeffs = ['a', 'b', 'c']
 
 for coeff in coeffs:

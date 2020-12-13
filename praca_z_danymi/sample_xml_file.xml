@@ -1,0 +1,24 @@
+<?xml version="1.0" ?><Company name="Pythoneers sp. z o.o.">
+	<Employees>
+		<Employee id="42">
+			<Name>Jan</Name>
+			<Surname>Kowalski</Surname>
+			<Position>Senior Python Developer</Position>
+			<Salary>15000</Salary>
+		<Age>24</Age></Employee>
+		
+		<Employee id="1337">
+			<Name>Ala</Name>
+			<Surname>Wisniewska</Surname>
+			<Position>Software Tester</Position>
+			<Salary>7000</Salary>
+		<Age>47</Age></Employee>
+	<Employee id="202"><Name>Piotr</Name><Surname>Zagloba</Surname><Position>Junior Python Developer</Position><Salary>5500</Salary><Age>25</Age></Employee></Employees>
+	<Offices>
+		<Office id="1">
+			<Address>ul. Nieistniejaca 17, 30-123 Krakow</Address>
+			<Area>100</Area>
+			<RentCost>3500</RentCost>
+		</Office>
+	</Offices>
+</Company>

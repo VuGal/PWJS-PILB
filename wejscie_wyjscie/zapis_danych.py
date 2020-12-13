@@ -2,17 +2,19 @@
 
 import sys
 
+
 print("Podaj kod zamka szyfrowego: ")
 code = input()
 
 if not code.isnumeric():
-    sys.exit("Kod nie jest poprawny! Prawidlowy kod powinien zawierac wylacznie cyfry.\n")
+    sys.exit("\nKod nie jest poprawny! Prawidlowy kod powinien zawierac wylacznie cyfry.\n")
 
 print("Kod zatwierdzony!\n")
 
 remaining_attempts = 5
 
 while (remaining_attempts):
+    
     print("\nPodaj kod:")
     attempt = input()
 
