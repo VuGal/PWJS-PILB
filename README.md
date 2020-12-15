@@ -59,3 +59,8 @@ Repozytorium zawierające kod źródłowy stanowiący rozwiązania zadań z prze
 - Pięciu filozofów
   - *pieciu_filozofow_deadlock.py* (wersja z deadlockiem)
   - *pieciu_filozofow_no_deadlock.py* (wersja z usuniętym deadlockiem [zastosowano mechanizm "kelnera"])
+
+
+## Projekt
+
+Repozytorium zawierające projekt (Naive Bayes): https://github.com/VuGal/Naive-Bayes
